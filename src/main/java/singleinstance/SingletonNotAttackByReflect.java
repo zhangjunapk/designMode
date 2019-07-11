@@ -3,8 +3,11 @@ package singleinstance;
 public class SingletonNotAttackByReflect
 {
     private static boolean flag = false;
-    private static final SingletonNotAttackByReflect INSTANCE = new SingletonNotAttackByReflect();
-    
+    private static final SingletonNotAttackByReflect INSTANCE;
+    static {
+         INSTANCE= new SingletonNotAttackByReflect();
+    }
+
     //保证其不被java反射攻击
     private SingletonNotAttackByReflect()
     {
@@ -13,6 +16,7 @@ public class SingletonNotAttackByReflect
             if(false == flag)
             {
                 flag = !flag;
+                System.out.println("初始化完成------->");
             }
             else
             {
@@ -27,5 +31,4 @@ public class SingletonNotAttackByReflect
         return INSTANCE;
     }
 
-    
 }
