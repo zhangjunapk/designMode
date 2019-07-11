@@ -22,9 +22,8 @@ public class Content {
                     }catch (Exception e){
                         e.printStackTrace();
                     }
-                    Util instance = Util.getInstance();
-                    UtilSync instance1 = UtilSync.getInstance();
-                    UtilActive instance2 = UtilActive.getInstance();
+
+                    SingletonNotAttackByReflect instance = SingletonNotAttackByReflect.getInstance();
                 }
             }).start();
         }

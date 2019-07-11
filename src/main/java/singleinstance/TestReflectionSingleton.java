@@ -14,11 +14,8 @@ import java.util.concurrent.CountDownLatch;
  */
 public class TestReflectionSingleton {
     public static void main(String[] args) {
-        //test2();
-        try {
-            Field flag = SingletonNotAttackByReflect.class.getDeclaredField("flag");
-            flag.setAccessible(true);
-            flag.set(null, false);
+        test2();
+      /*  try {
 
             Constructor<SingletonNotAttackByReflect> declaredConstructor = SingletonNotAttackByReflect.class.getDeclaredConstructor();
             declaredConstructor.setAccessible(true);
@@ -27,7 +24,7 @@ public class TestReflectionSingleton {
             System.out.println(UtilCantReflection.GetInstance());
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public static void test1() {
@@ -53,20 +50,15 @@ public class TestReflectionSingleton {
                     public void run() {
                         try {
                             latch.await();
-                            Field flag = SingletonNotAttackByReflect.class.getDeclaredField("flag");
-                            flag.setAccessible(true);
                             synchronized (SingletonNotAttackByReflect.class) {
-                                flag.set(null, false);
-                                try {
+
 //                                    SingletonNotAttackByReflect.getInstance().pringFlag();
-                                    Constructor<UtilCantReflection> declaredConstructor = UtilCantReflection.class.getDeclaredConstructor();
+                                    Constructor<SingletonNotAttackByReflect> declaredConstructor = SingletonNotAttackByReflect.class.getDeclaredConstructor();
                                     declaredConstructor.setAccessible(true);
-                                    UtilCantReflection utilSync = declaredConstructor.newInstance();
+                                    SingletonNotAttackByReflect utilSync = declaredConstructor.newInstance();
                                     System.out.println(utilSync);
                                     System.out.println(UtilCantReflection.GetInstance());
-                                } catch (Exception e) {
-                                    System.out.println("反射失败");
-                                }
+
                             }
                         } catch (Exception e) {
                             e.printStackTrace();

@@ -28,4 +28,7 @@ public class UtilSync {
         }
         return sync;
     }
+    public void show(){
+        System.out.println("show----------->");
+    }
 }
