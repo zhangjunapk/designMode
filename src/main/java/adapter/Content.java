@@ -10,14 +10,14 @@ package adapter;
 public class Content {
     public static void main(String[] args) {
         HaseeComputer haseeComputer = new HaseeComputer();
-        XXCarReader xxCarReader = new XXCarReader();
-        xxCarReader.insertFlashMemory(new IFlashMemory() {
+        XXCardReader xxCardReader = new XXCardReader();
+        xxCardReader.insertFlashMemory(new IFlashMemory() {
             @Override
             public String getRawData() {
                 return "我是存储卡，原始数据";
             }
         });
-        haseeComputer.insertUsb(0,xxCarReader);
+        haseeComputer.insertUsb(0, xxCardReader);
         haseeComputer.setPowerAdapter(new IPowerAdapter() {
             @Override
             public Double input() {
@@ -30,7 +30,7 @@ public class Content {
             }
         });
         haseeComputer.powerOn();
-        IUSB userDevice = haseeComputer.getUserDevice(0);
+        IUSB userDevice = haseeComputer.getUsbDevice(0);
         userDevice.readData();
     }
 }

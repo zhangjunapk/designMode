@@ -32,7 +32,7 @@ public interface IComputer {
      * @param index
      * @return
      */
-    IUSB getUserDevice(int index);
+    IUSB getUsbDevice(int index);
 
     /**
      * 给电脑设置电源适配器

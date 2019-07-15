@@ -7,7 +7,7 @@ package adapter;
  * @CreateTime: 2019-07-15 10:15
  * @Description: 读卡器
  */
-public class XXCarReader implements ICarReader{
+public class XXCardReader implements ICardReader {
     private IFlashMemory flashMemory;
     boolean isPowerOn=false;
     @Override

@@ -54,7 +54,7 @@ public class HaseeComputer implements IComputer{
     }
 
     @Override
-    public IUSB getUserDevice(int index) {
+    public IUSB getUsbDevice(int index) {
         if(!isPowerOn){
             System.out.println("电脑未开机");
             return null;
