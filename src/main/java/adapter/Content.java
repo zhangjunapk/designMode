@@ -1,5 +1,7 @@
 package adapter;
 
+import java.io.ObjectOutputStream;
+
 /**
  * @BelongsProject: designmode
  * @BelongsPackage: adapter

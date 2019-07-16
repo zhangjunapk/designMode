@@ -9,5 +9,4 @@ package adapter;
  */
 public interface ICardReader extends IUSB{
     void insertFlashMemory(IFlashMemory flashMemory);
-    void readData();
 }
