@@ -34,6 +34,7 @@ public class HaseeComputer implements IComputer{
             return true;
         }else{
             System.out.println("电源适配器输出有问题，无法正常供电,需要19v电压");
+            isPowerOn=false;
             return false;
         }
     }
